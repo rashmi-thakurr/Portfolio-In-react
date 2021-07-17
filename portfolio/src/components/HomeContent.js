@@ -1,11 +1,13 @@
 import React from 'react';
-
+import AnimatedBackground from './AnimatedBackground';
 import '../styles.css';
 export default function HomeContent() {
     return (
-      
+        <>
+        
             <div className="main-container">
                 <div className="main">
+                <AnimatedBackground background="transparent" z="6" borderRadius="100%"/>
                     <h1>Welcome</h1>
                     <div className="wrapper">
                          <div className="static-txt">
@@ -25,7 +27,7 @@ export default function HomeContent() {
                 <div className="shadow two"></div>
             </div>
 
-           
+          </> 
       
     )
 }

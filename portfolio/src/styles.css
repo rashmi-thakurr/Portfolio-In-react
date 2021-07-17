@@ -10,9 +10,6 @@ body{
     position: relative;
 
 }
-#header{
-    display: none;
-}
 
 .main{
     position: relative;
@@ -49,7 +46,9 @@ body{
     box-shadow: rgba(50, 50, 93, 0.3) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
    
 }
-
+.navbar2{
+    z-index: 100;
+}
 .menu{
     max-width: 72rem;
     width: 100%;
@@ -343,10 +342,11 @@ ul{
   .container.active .main:hover {
     transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.5);
   }
-
-
-.mobile-menu{
+.navbar .mobile-menu{
     display: none;
+}
+
+ .mobile-menu{
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -355,7 +355,7 @@ ul{
     height: auto;
 }
 
-.mobile-menu ul{
+ .mobile-menu ul{
     list-style: none;
     position: absolute;
     background-color: black;
@@ -372,7 +372,7 @@ ul{
     transition: 0.5s ease left;
 
 }
-.mobile-menu ul.active{
+ .mobile-menu ul.active{
     left: 0%;
 }
 
@@ -408,7 +408,7 @@ ul{
 
 
   @media (max-width:720px){
-      .mobile-menu{
+     .navbar .mobile-menu{
           display: block;
           z-index: 1000;
       }
@@ -477,11 +477,13 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    background:#161623;
 }
 .about-container{
     width: 100vw;
     min-height: 100vh;
     background:#161623;
+    
 }
 .about-container::before{
     content: ' ';
@@ -493,6 +495,7 @@ ul{
     background:linear-gradient(#f00,#f0f );
   -webkit-clip-path: circle(30% at right 70%);
   clip-path: circle(30% at right 70%);
+  z-index: 1;
 }
 
 .about-container::after{
@@ -505,6 +508,7 @@ ul{
     background:linear-gradient(#2196f3,#e91e63 );
   -webkit-clip-path: circle(20% at 10% 10%);
   clip-path: circle(20% at 10% 10%);
+  z-index: 1;
 }
 
 .about{
@@ -776,6 +780,10 @@ ul{
 }
 
 /*poem*/
+
+.poemdiv .menu .hamburger-menu{
+    display: none;
+}
 .poem{
     width: 100vw;
    background-color: #161623;
@@ -888,34 +896,406 @@ ul{
 }
 }
 
-.tealbar{
-    position: fixed;
-    background-color: teal;
-    width: 100vw;
-    height: 7.5vh;
-}
+/*contact*/
 .contact{
+    background-color: #161623;
     display: flex;
     width: 100vw;
     height: 100vh;
 }
+.contact .left{
+    flex-basis: 50%;
+}
+.contact .options{
+    flex-direction: column;
+    display: flex;
+   margin:50px;
+   margin-top: 100px;
+    flex-basis: 50%; 
+    height: fit-content;
+}
 .contact .left img{
     margin: 20px 20px 20px 20px;
-    width: 800px;
-    height: 650px;
-    animation: moveContact 5s ease infinite;
+    width: 700px;
+    height: 550px;
+    animation: move 7s ease infinite;
 }
 
 
+.options .option{
+    object-fit: cover;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse ;
+    justify-content: space-between;
+    animation: move 20s ease infinite;
+   
+}
+.options .option img{
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+}
 
-@keyframes moveContact{
-    0%{
-        margin-top: 20px;
+.options .option h3{
+    font-weight: 900;
+    color: #fff;
+    padding: 40px;
+    margin-left: 10px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+@media (max-width:1250px){
+    .contact .left img{
+        margin: 15px 15px 15px 15px;
+        width: 500px;
+        height: 550px;
     }
-    50%{
-        margin-top: 40px;
+}
+@media (max-width:1100px){
+    .contact .left img{
+        margin: 12px 12px 12px 12px;
+        width: 400px;
+        height: 500px;
+    }
+    .options .option img{
+        margin-right: 7px;
+        width: 80px;
+        height: 80px;
+    }
+    .options .option h3{
+        padding: 30px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width:900px){
+    .contact .left img{
+        margin: 10px 10px 10px 10px;
+        width: 370px;
+    }
+    .options .option img{
+        margin-right: 5px;
+        width: 70px;
+        height: 70px;
+    }
+    .options .option h3{
+        padding: 25px;
+    }
+}
+
+@media (max-width:830px){
+    .contact .left{
+        display: none;
+    }
+    .contact .options{
+        flex-basis: 80%;   
+    }
+    .contact .option{
+        justify-content: center;
+    }
+}
+@media (max-width:450px){
+    .options .option img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width:400px){
+    .contact{
+        height: 100%;
+    }
+    .options .option {
+        align-items: center;
+        flex-direction: column;
+    }
+    .options .option h3{
+        padding: 5px;
+    }
+}
+@media (max-width:400px){
+    .options .option h3{
+        padding: 2px;
+    }
+}
+
+/*Projects*/
+.projects{
+    height: 100vh;
+    background:linear-gradient(90deg,#031163,#1978a5,#05716c,#1fbfb8);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.projects .box{
+    margin: 100px;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
     }
     100%{
-        margin-top: 20px;
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.p-1{
+    --i:1;
+}
+.p-2{
+    --i:2;
+}
+.p-3{
+    --i:3;
+}
+.p-4{
+    --i:4; 
+}
+.p-5{
+    --i:5;
+}
+.p-6{
+    --i:6; 
+}
+.projects .box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(300px);
+    -webkit-box-reflect: below 5px linear-gradient(transparent,rgba(0,0,0,0.5));
+    outline: none;
+    z-index: 1;
+}
+
+
+.projects .box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+    border-radius: 5px;
+    opacity: 0.95;
+    border: 1px solid rgba(255, 255, 255, 0.5) ;
+    backdrop-filter: blur(50px);
+}
+
+.projects .box img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    opacity: 1;
+   
+}
+@media (max-width:720px) {
+    .projects .box{
+        width: 200px;
+        height: 200px;
+        margin: 25px;
+    }
+
+    .projects .box span{
+        transform: rotateY(calc(var(--i) * 60deg)) translateZ(200px);
+    }
+}
+
+
+/*Skills*/
+.skills{
+    min-height: 100vh;
+    background:linear-gradient(90deg,#320d3e 0%, #7e1544 35%,#4d5198 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.skills .card{
+    z-index: 100;
+    margin: 15px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s ;
+    cursor: pointer;
+}
+.skills .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    
+}
+.percent{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+    z-index: 1000;
+    position: relative;
+}
+.percent .number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.percent .number h2{
+    color: #777;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+.card:hover .percent .number h2{
+    color: #fff;
+    font-size: 50px;
+}
+svg{
+    width: 150px;
+    height: 150px;
+    z-index: 100;
+    position: relative;
+}
+svg circle{
+
+   width: 100%;
+   height:100%;
+    fill: none;
+    stroke: #000;
+      stroke-width: 10;
+      transform: translate(5px,5px);
+}
+svg circle:nth-child(2){
+
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+.skills .card:nth-child(1) svg circle:nth-child(2){
+    stroke: #00ff43;
+}
+.skills .card:nth-child(2) svg circle:nth-child(2){
+    stroke: #00a1ff;
+}
+.skills .card:nth-child(3) svg circle:nth-child(2){
+    stroke: #ff0457;
+}
+.skills .card:nth-child(4) svg circle:nth-child(2){
+    stroke: teal;
+}
+.skills .text{
+
+    color: #777;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    margin-top: 30px;
+}
+
+/*Animated Background*/
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+   /* background:linear-gradient(90deg,#320d3e 0%, #7e1544 35%,#4d5198 100%);*/
+}
+.background .box div{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 8px solid rgba(255, 255, 255, 0.5);
+}
+.background .box div:nth-child(1){
+    top: 15%;
+    left: 50%;
+    animation: animatedBox 10s linear infinite;
+}
+.background .box div:nth-child(2){
+    top: 25%;
+    left: 10%;
+    animation: animatedBox 13s linear infinite;
+}
+.background .box div:nth-child(3){
+    top: 78%;
+    left: 83%;
+    animation: animatedBox 10s linear infinite;
+}
+.background .box div:nth-child(4){
+    top: 65%;
+    left: 60%;
+    animation: animatedBox 15s linear infinite;
+}
+.background .box div:nth-child(5){
+    top: 15%;
+    left: 78%;
+    animation: animatedBox 7s linear infinite;
+}
+.background .box div:nth-child(6){
+    top: 25%;
+    left: 85%;
+    animation: animatedBox 5s linear infinite;
+}
+.background .box div:nth-child(7){
+    top: 75%;
+    left: 19%;
+    animation: animatedBox 8s linear infinite;
+}
+.background .box div:nth-child(8){
+    top: 85%;
+    left: 10%;
+    animation: animatedBox 17s linear infinite;
+}
+.background .box div:nth-child(9){
+    top: 17%;
+    left: 25%;
+    animation: animatedBox 13s linear infinite;
+}
+.background .box div:nth-child(10){
+    top: 12%;
+    left: 20%;
+    animation: animatedBox 9s linear infinite;
+}
+
+@keyframes animatedBox{
+    0%{
+        opacity:1;
+        transform:scale(0) translateY(0) rotate(0);
+    }
+    100%{
+        opacity:0;
+        transform:scale(1.5) translateY(90px) rotate(360deg);
+    }
+
+
+}
+
+@media (max-width:700px) {
+    .skills .card{
+        width: 250px;
+        height: 250px;
     }
 }
