@@ -7,7 +7,7 @@ export default function HomeContent() {
         
             <div className="main-container">
                 <div className="main">
-                <AnimatedBackground background="transparent" z="6" borderRadius="100%"/>
+                <AnimatedBackground background="transparent" z="6" divcolor="teal"/>
                     <h1>Welcome</h1>
                     <div className="wrapper">
                          <div className="static-txt">

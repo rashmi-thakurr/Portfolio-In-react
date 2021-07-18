@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-export default function Menu({menu,showMenu}) {
+export default function Menu({ menu, showMenu }) {
     return (
         <div>
             <div className={menu ? "mobile-menu  active" : "mobile-menu "}>

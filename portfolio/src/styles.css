@@ -135,25 +135,6 @@ body{
     }
 }
 
-
-
-@keyframes animate{
-    0%{
-        background-position: 0;
-    }
-    100%{
-        background-position: 1360px;
-    }
-}
-@keyframes animate-reverse{
-    0%{
-        background-position: 1360px;
-    }
-    100%{
-        background-position: 0;
-    }
-}
-
 .wrapper{
     display: inline-flex;
     padding: 5px;
@@ -474,15 +455,19 @@ ul{
 
 /*About*/
 .about-c{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background:#161623;
+    background: linear-gradient(-46deg,#79cbb8,#500472);
+    z-index: 1;
 }
+
 .about-container{
     width: 100vw;
     min-height: 100vh;
     background:#161623;
+    z-index: 1;
     
 }
 .about-container::before{

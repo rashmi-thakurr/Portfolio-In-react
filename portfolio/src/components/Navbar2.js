@@ -1,7 +1,7 @@
-import React,{ useState} from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles.css'
-export default function Navbar2() {
+export default function Navbar2(props) {
     const [options, setoptions] = useState(false)
     return (
         <div>

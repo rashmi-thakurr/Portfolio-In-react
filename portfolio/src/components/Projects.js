@@ -5,10 +5,10 @@ import AnimatedBackground from './AnimatedBackground'
 
 export default function Projects() {
     return (
-        <><Navbar2/>
-            <AnimatedBackground/>
+        <><Navbar2 z="10000" />
+            <AnimatedBackground />
             <div className=' projects' >
-          
+
                 <div className="note" >
                     <h2>Click On the Image to view the corresponding Project</h2>
                 </div>
