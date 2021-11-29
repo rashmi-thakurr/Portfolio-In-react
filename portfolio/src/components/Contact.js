@@ -25,7 +25,7 @@ export default function Contact() {
                         </div>
                         <div className="message option">
                             <img src="Images/letter.svg"/>
-                            <h3>Phone : 9680483380</h3>
+                            <h3>Phone : xxxxxxxxxx</h3>
                         </div>
                    </div>
             </div>
